@@ -11,14 +11,14 @@ Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(); // ADXL345 Object
 
 void setup() {
   Serial.begin(9600);
-  if(!accel.begin()) { // Corregido: corchete de apertura en lugar de punto y coma
+  if(!accel.begin()) { 
     Serial.println("ADXL345 no detectado.");
     while(1);
   }
 }
 
 void loop() {
-  sensors_event_t event; // Corregido: eliminado el guión bajo extra
+  sensors_event_t event;
   accel.getEvent(&event);
   Serial.print("X: ");
   Serial.print(event.acceleration.x);
